@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Monty Hall Simulator">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Monty Hall Problem</title>
+
+        <!-- Custom CSS  -->
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Monty Hall Problem</h1>
+            </header>
+
+            <div class="door-wrapper">
+                <div class="door"></div>
+                <div class="door"></div>
+                <div class="door"></div>
+            </div>
+
+            <!--Play and Simulate Tabs-->
+            <div class="tabs">
+                <a href="#tab-content__play"  class="tab-links" onclick="showTabContent(event,'tab-content__play')" >Play</a>
+                <a href="#tab-content__simulate"  class="tab-links" onclick="showTabContent(event,'tab-content__simulate')">Simulate</a>
+            </div>
+            <hr class="dull--line">
+        
+            <div class="tab-content">
+                <div id="tab-content__play"  class=" tab-content__data tab-content__active">
+                    <h2 id="play-info">Pick one of the three doors</h2>
+                </div>
+                <div id="tab-content__simulate" class = "tab-content__data">
+                    <fieldset>
+                        <legend>Simuation</legend>
+                        <form id="simulation-form"> 
+                            <label for="times">Run Simulation</label>
+                            <select name="times" id="times" form="simulation-form">
+                                <option value="10" selected>10 times</option>
+                                <option value="50">50 times</option>
+                                <option value="100">100 times</option>
+                                <option value="1000">1000 times</option>
+                            </select>
+
+                            <label for="choice">And</label>
+                            <select name="choice" id="choice" form="simulation-form">
+                                <option value="keep" selected>keep the choice</option>
+                                <option value="change">change the choice</option>
+                            </select><br><br>
+                                
+                            <button class="simulate__btn">Simulate</button>
+                        </form>
+                    </fieldset>
+
+                    <div class="indicator">
+                        <div class="indicator__card">
+                            <div class="indicator__card__label indicator__card__label-change">Change Choice</div>
+                            <div class="progress">
+                                <div class="progress__fill progress-change"></div>
+                                <span class="progress__text1">
+                                    <h3>Win</h3>
+                                    <p id="change-win">0%</p>
+                                </span>
+                                <span class="progress__text2">
+                                    <h3>Lose</h3>
+                                    <p id="change-lose">0%</p>
+                                </span>   
+                            </div> 
+                        </div>
+                        <div class="indicator__card">
+                            <div class="indicator__card__label indicator__card__label-keep">Keep Choice</div>
+                            <div class="progress ">
+                                <div class="progress__fill progress-keep"></div>
+                                <span class="progress__text1">
+                                    <h3>Win</h3>
+                                    <p id="keep-win">0%</p>
+                                </span>
+                                <span class="progress__text2">
+                                    <h3>Lose</h3>
+                                    <p id="keep-lose">0%</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <br><br>
+        </div>
+        
+        <script type="module" src="script.js"></script>
+        
+    
+    </body>
+</html>
